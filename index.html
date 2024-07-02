@@ -58,12 +58,12 @@
                 
                 <section>
                     <input type="tel" id="phoneNumber" placeholder="77771234567">
-                    <input type="text" id="sendMessage" placeholder="Hello World!">
+                    <input type="text" id="messageText" placeholder="Hello World!">
                     <button type="button" id="sendMessage">sendMessage</button>
                 </section>
                 
                 <section>
-                    <input type="tel" id="phoneNumber" placeholder="77771234567">
+                    <input type="tel" id="phoneNumberUrl" placeholder="77771234567">
                     <input type="text" id="fileUrl" placeholder="https://my.site.com/img/horse.png">
                     <button type="button" id="sendFileByUrl">sendFileByUrl</button>
                 </section>
@@ -88,15 +88,14 @@
 
         document.getElementById("sendMessage").addEventListener("click", () => {
             const chatId = `${document.getElementById("phoneNumber").value}@c.us`;
-            const message = document.getElementById("sendMessage").value;
+            const message = document.getElementById("messageText").value;
             callGreenAPI("sendMessage", "POST", {chatId, message});
         });
 
         document.getElementById("sendFileByUrl").addEventListener("click", () => {
-            const chatId = `${document.getElementById("phoneNumber-uploadByUrl").value}@c.us`;
+            const chatId = `${document.getElementById("phoneNumberUrl").value}@c.us`;
             const urlFile = document.getElementById("fileUrl").value;
-            const fileName = document.getElementById("fileName").value;
-            callGreenAPI("sendFileByUrl", "POST", {chatId, urlFile, fileName});
+            callGreenAPI("sendFileByUrl", "POST", {chatId, urlFile});
         });
 
         function callGreenAPI(method, httpMethod, additionalData = {}) {

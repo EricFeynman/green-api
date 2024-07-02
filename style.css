@@ -1,0 +1,56 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    gap: 50px;
+}
+
+.form-group input {
+    min-width: 300px;
+}
+
+.form-group button {
+    background-color: #00ab41;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #83f28f;
+    color: white;
+}
+
+.column {
+    display: grid;
+    grid-auto-rows: auto 1fr;
+    gap: 5px;
+
+    & > section {
+        display: grid;
+        margin: 1rem 0;
+        gap: 1rem;
+    }
+}
+
+.response {
+    margin-block-start: 0;
+    margin: 1.1rem;
+}
+
+.form-group output {
+    border: 1px solid gray;
+}
